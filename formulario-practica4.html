@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Practica 4 - Formulario</title>
 
     <style>
@@ -17,26 +17,25 @@
         padding: 20px;
       }
 
-      header {
+      .encabezado {
         text-align: center;
         font-weight: bold;
         margin-bottom: 40px;
       }
 
-      h2 {
+      .texto-superior, .texto-inferior {
         color: #008080; 
         font-size: 18px;
         margin: 10px 0;
-        font-weight: normal;
       }
 
-      div {
+      .caja-central {
         background-color: #ffdf6b;
         padding: 20px;
         margin: 15px 0;
       }
 
-      h1 {
+      .caja-central h1 {
         color: #004aad;
         margin: 0;
         font-size: 40px;
@@ -46,18 +45,17 @@
         margin: 0 auto;
       }
 
-      td {
+      table td {
         padding: 8px;
         vertical-align: top;
-        font-size: 14px;
-        color: #333;
-        line-height: 1.8;
       }
 
-      td:first-child {
+      table td:first-child {
         text-align: right;
         padding-right: 15px;
+        font-size: 14px;
         font-weight: bold;
+        color: #333;
       }
 
       input[type="text"],
@@ -76,6 +74,12 @@
       input[type="checkbox"] {
         margin-right: 5px;
       }
+
+      .opciones-container {
+        font-size: 14px;
+        color: #333;
+        line-height: 1.8;
+      }
       
       input[type="submit"] {
         padding: 10px 20px;
@@ -86,56 +90,64 @@
         margin-top: 15px;
         cursor: pointer;
       }
+      
+      .boton-container {
+        text-align: center;
+      }
     </style>
   </head>
   <body>
     
-    <header>
-      <h2>Formulario de registro</h2>
-      <div>
+    <div class="encabezado">
+      <div class="texto-superior">Formulario de registro</div>
+      <div class="caja-central">
         <h1>Reservaciones</h1>
       </div>
-      <h2>Castellanos Loreto Francisco</h2>
-    </header>
+      <div class="texto-inferior">Castellanos Loreto Francisco</div>
+    </div>
 
     <form action="">
       <table>
         <tbody>
           <tr>
             <td>Ingresa tu nombre:</td>
-            <td><input type="text"></td>
+            <td><input type="text" /></td>
           </tr>
           <tr>
             <td>Ingresa tus apellidos:</td>
-            <td><input type="text"></td>
+            <td><input type="text" /></td>
           </tr>
           <tr>
             <td>Ingresa tu edad:</td>
-            <td><input type="text"></td>
+            <td><input type="text" /></td>
           </tr>
           <tr>
             <td>Ingresa tu correo e.:</td>
-            <td><input type="email" placeholder="alguien1234@dominio.com"></td>
+            <td><input type="email" placeholder="alguien1234@dominio.com" /></td>
           </tr>
           <tr>
             <td>Ingresa tu clave de acceso:</td>
-            <td><input type="password"></td>
+            <td><input type="password" /></td>
           </tr>
           <tr>
             <td>Ingresa tu genero:</td>
             <td>
-              <input type="radio" name="genero" value="masculino" id="masculino"> <label for="masculino">masculino</label>
-              <input type="radio" name="genero" value="femenino" id="femenino"> <label for="femenino">femenino</label>
+              <div class="opciones-container">
+                <input type="radio" name="genero" value="masculino" id="masculino"> <label for="masculino">masculino</label>
+                <input type="radio" name="genero" value="femenino" id="femenino"> <label for="femenino">femenino</label>
+              </div>
             </td>
           </tr>
           <tr>
             <td>Especifica tus pasatiempos:</td>
             <td>
-              <input type="checkbox" id="computacion"> <label for="computacion">computacion</label><br>
-              <input type="checkbox" id="negocios"> <label for="negocios">negocios</label><br>
-              <input type="checkbox" id="ia"> <label for="ia">inteligencia artificial</label><br>
-              <input type="checkbox" id="deportes"> <label for="deportes">deportes</label><br>
-              <input type="checkbox" id="viajes"> <label for="viajes">viajes</label>
+              <div class="opciones-container">
+                <input type="checkbox" id="computacion"> <label for="computacion">computacion</label><br>
+                <input type="checkbox" id="negocios"> <label for="negocios">negocios</label><br>
+                <input type="checkbox" id="ia"> <label for="ia">inteligencia artificial</label><br>
+                <input type="checkbox" id="deportes"> <label for="deportes">deportes</label><br>
+                <input type="checkbox" id="viajes"> <label for="viajes">viajes</label>
+              </div>
             </td>
           </tr>
           <tr>
@@ -155,11 +167,11 @@
           </tr>
           <tr>
             <td>Ingresa tu contraseña:</td>
-            <td><input type="password"></td>
+            <td><input type="password" /></td>
           </tr>
           <tr>
-            <td colspan="2" style="text-align: center;">
-              <input type="submit" value="Enviar valores">
+            <td colspan="2" class="boton-container">
+              <input type="submit" value="Enviar valores" />
             </td>
           </tr>
         </tbody>
